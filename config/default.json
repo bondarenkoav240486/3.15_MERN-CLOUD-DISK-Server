@@ -1,0 +1,8 @@
+{
+  "serverPort": 5000,
+  "dbUrl": "mongodb+srv://Anton:Bondarenko240486@cloud.hfkxqan.mongodb.net/?retryWrites=true&w=majority&appName=cloud",
+  "secretKey": "mern-secket-key",
+  "filePath": "D:\\Education_and_work\\Programmary\\3.15 MERN - FullStack разработка облачного хранилища\\2\\3.15 OWN-MERN-cloud-disk\\files",
+  "staticPath": "D:\\Education_and_work\\Programmary\\3.15 MERN - FullStack разработка облачного хранилища\\2\\3.15 OWN-MERN-cloud-disk\\server\\static"
+}
+

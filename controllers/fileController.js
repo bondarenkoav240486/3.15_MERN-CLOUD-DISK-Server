@@ -34,6 +34,7 @@ class FileController {
     }
 
     async getFiles(req, res) {
+        console.log(1111111111+'getFiles')
         try {
             const {sort} = req.query
             let files

@@ -15,7 +15,6 @@ router.post('/registration',
         check('password', 'Password must be longer than 3 and shorter than 12').isLength({min:3, max:12})
     ],
     async (req, res) => {
-        console.log(req.body)
 
     try {
         const errors = validationResult(req)
@@ -75,7 +74,6 @@ router.post('/login',
 router.get('/auth', authMiddleware,
     async (req, res) => {
         try {
-            console.log('auth() auth/auth')
             const user = await User.findOne({_id: req.user.id})
 
             const token = jwt.sign({id: user.id}, config.get("secretKey"), {expiresIn: "1h"})

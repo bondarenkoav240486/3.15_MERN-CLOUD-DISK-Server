@@ -5,7 +5,20 @@ const User = require('../models/User')
 const File = require('../models/File')
 const Uuid = require('uuid')
 
+const path = require('path');
+
+
 // const mv = require('mv');
+
+// Визначення кореневої директорії проекту
+// const rootDir = path.resolve(__dirname, '..', '..');
+const rootDir = path.resolve(__dirname, '..');
+
+// Відносний шлях до папки files
+const staticDir = path.join(rootDir, 'static');
+
+console.log(1122222, staticDir)
+
 
 
 class FileController {
@@ -159,9 +172,13 @@ class FileController {
             const user = await User.findById(req.user.id)
 
             const avatarName = Uuid.v4() + ".jpg"
-            console.log(config.get('staticPath') + "\\" + avatarName)
+            const avatarPath = path.join(staticDir, avatarName);  // Відносний шлях до файлу аватара
 
-            await file.mv(config.get('staticPath') + "\\" + avatarName)
+            await file.mv(avatarPath);
+
+            // console.log(config.get('staticPath') + "\\" + avatarName)
+
+            // await file.mv(config.get('staticPath') + "\\" + avatarName)
 
             user.avatar = avatarName
             await user.save()
